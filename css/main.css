@@ -21,3 +21,15 @@ nav {
     display: flex;
     align-items: center;
 }
+
+.service {
+    width: 75%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border: solid black 1px;
+    margin-top: 2rem;
+
+}
+

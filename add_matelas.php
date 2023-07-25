@@ -47,37 +47,51 @@ if (!empty($_POST)) {
     }
 }
 ?>
-
-<h1>Ajouter un nouveau matelas</h1>
-<!-- Lorsque l'attribut action est vide les données du formulaire sont envoyées à la même page -->
-<form action="" method="post">
-    <div>
-        <label for="inputMarque">Marque :</label>
-        <input type="text" id="inputMarque" name="marque" value="<?= isset($marque) ? $marque : "" ?>">
-        <?php if (isset($errors["marque"])) { ?>
-            <span class="text-danger"><?= $errors["marque"] ?></span>
-        <?php } ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Matelas</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/63d06bf0f5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <?php include("templates/header.php"); ?>
+    <div class="container mt-4">
+        <h1 class="text-center">Ajouter un nouveau matelas</h1>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="inputMarque">Marque :</label>
+                <input type="text" class="form-control" id="inputMarque" name="marque" value="<?= isset($marque) ? $marque : "" ?>">
+                <?php if (isset($errors["marque"])) { ?>
+                    <span class="text-danger"><?= $errors["marque"] ?></span>
+                <?php } ?>
+            </div>
+            <div class="form-group">
+                <label for="inputDimension">Dimension :</label>
+                <input type="text" class="form-control" id="inputDimension" name="dimension" value="<?= isset($dimension) ? $dimension : "" ?>">
+                <?php if (isset($errors["dimension"])) { ?>
+                    <span class="text-danger"><?= $errors["dimension"] ?></span>
+                <?php } ?>
+            </div>
+            <div class="form-group">
+                <label for="inputPrix">Prix :</label>
+                <input type="number" step="0.01" class="form-control" id="inputPrix" name="prix" value="<?= isset($prix) ? $prix : "" ?>">
+                <?php if (isset($errors["prix"])) { ?>
+                    <span class="text-danger"><?= $errors["prix"] ?></span>
+                <?php } ?>
+            </div>
+            <div class="form-group">
+                <label for="inputImages">Images :</label>
+                <input type="text" class="form-control" id="inputImages" name="images" value="<?= isset($images) ? $images : "" ?>">
+                <?php if (isset($errors["images"])) { ?>
+                    <span class="text-danger"><?= $errors["images"] ?></span>
+                <?php } ?>
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
     </div>
-    <div>
-        <label for="inputDimension">Dimension :</label>
-        <input type="text" id="inputDimension" name="dimension" value="<?= isset($dimension) ? $dimension : "" ?>">
-        <?php if (isset($errors["dimension"])) { ?>
-            <span class="text-danger"><?= $errors["dimension"] ?></span>
-        <?php } ?>
-    </div>
-    <div>
-        <label for="inputPrix">Prix :</label>
-        <input type="number" step="0.01" id="inputPrix" name="prix" value="<?= isset($prix) ? $prix : "" ?>">
-        <?php if (isset($errors["prix"])) { ?>
-            <span class="text-danger"><?= $errors["prix"] ?></span>
-        <?php } ?>
-    </div>
-    <div>
-        <label for="inputImages">Images :</label>
-        <input type="text" id="inputImages" name="images" value="<?= isset($images) ? $images : "" ?>">
-        <?php if (isset($errors["images"])) { ?>
-            <span class="text-danger"><?= $errors["images"] ?></span>
-        <?php } ?>
-    </div>
-    <button type="submit">Ajouter</button>
-</form>
+</body> 
+</html>
