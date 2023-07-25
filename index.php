@@ -24,19 +24,9 @@
     <?php include("templates/header.php"); ?>
     <!-- HeroBanner -->
     <section class="heroBanner">
-        <h1 class="text-white">Transformer la chambre de vos rêve en realité</h1>
+        <h1 class="text-white m-5">Transformer la chambre de vos rêve en realité</h1>
     </section>
-
-    <!-- <div class="recipes">
-    <?php
-    foreach ($matelas as $matela) {
-    ?>
-        <div class="recipe">
-            <img src="<?= $matela["images"] ?>" alt="">
-        </div>
-    <?php
-    }
-    ?> -->
+    
 <div class="container">
     <div class="row">
     <?php

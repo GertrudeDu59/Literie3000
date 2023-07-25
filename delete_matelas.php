@@ -1,5 +1,5 @@
 <?php
-// Connexion à la base literie3000
+// Connexion 
 $dsn = "mysql:host=localhost;dbname=literie3000";
 $db = new PDO($dsn, "root", "");
 
@@ -7,12 +7,12 @@ $db = new PDO($dsn, "root", "");
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['matelas_id']) && is_numeric($_POST['matelas_id'])) {
     $matelas_id = $_POST['matelas_id'];
 
-    // Requête de suppression du matelas
+    // suppression du matelas
     $query = $db->prepare("DELETE FROM matelas WHERE id = :matelas_id");
     $query->bindParam(":matelas_id", $matelas_id);
 
     if ($query->execute()) {
-        // Rediriger vers la page d'affichage de la liste après la suppression réussie
+        // Rediriger vers la page 
         header("Location: delete_matelas.php");
         exit();
     } else {

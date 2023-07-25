@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-6">
                     <div class="d-flex align-items-center justify-content-center flex-column my-5">
-                        <a href="#"><i class="fa-solid fa-bed fa-2xl" style="color: #000000; vertical-align: middle;"></i></a>
+                        <a href="sleep.php"><i class="fa-solid fa-bed fa-2xl" style="color: #000000; vertical-align: middle;"></i></a>
                         <p class="lead my-3">Dormir sur un matelas</p>
                     </div>
                 </div>

@@ -1,12 +1,12 @@
 <?php
 if (!empty($_POST)) {
-    // Le formulaire est envoyé !
+    // Le formulaire est envoyé
     // Utilisation de la fonction strip_tags pour supprimer d'éventuelles balises HTML qui ce seraient glissées dans le champ input et palier à la faille XSS
     // Utilisation de la fonction trim pour supprimer d'éventuels espaces en début et fin de chaine
     $marque = trim(strip_tags($_POST["marque"]));
     $dimension = trim(strip_tags($_POST["dimension"]));
     $prix = trim(strip_tags($_POST["prix"]));
-    $images = trim(strip_tags($_POST["images"])); // Remarque : Ceci devrait être un chemin vers l'image, pas une URL.
+    $images = trim(strip_tags($_POST["images"]));
 
     $errors = [];
 
@@ -38,10 +38,10 @@ if (!empty($_POST)) {
         $query->bindParam(":images", $images);
 
         if ($query->execute()) {
-            // Le matelas a été ajouté avec succès
+        
             echo "Le matelas a été ajouté avec succès.";
         } else {
-            // Une erreur s'est produite lors de l'ajout du matelas
+            
             echo "Une erreur s'est produite lors de l'ajout du matelas : " . $query->errorInfo()[2];
         }
     }
@@ -90,7 +90,7 @@ if (!empty($_POST)) {
                     <span class="text-danger"><?= $errors["images"] ?></span>
                 <?php } ?>
             </div>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
         </form>
     </div>
 </body> 
