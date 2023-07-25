@@ -21,25 +21,24 @@
     <script src="https://kit.fontawesome.com/63d06bf0f5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="sticky-top py-1 bg-dark">
-    <div class="container d-flex justify-content-between">
-        <a class="py-2" href="#">
-          <img src="images/logo.png" class="logo" alt="">
-        </a>
-        <div class="box py-2">
-            <a class="py-2 d-none d-md-inline-block" href="#"><img src="images/cart.png" alt="" width="40%"></a>
-            <a class="py-2 d-none d-md-inline-block" href="#"><img src="images/user.png" alt="" width="50%"></i></a>
+    <!-- NavBar -->
+    <nav class="sticky-top py-1 bg-dark">
+        <div class="container d-flex justify-content-between">
+            <a class="py-2" href="#">
+            <img src="images/logo.png" class="logo" alt="">
+            </a>
+            <div class="box py-2">
+                <a class="py-2 d-none d-md-inline-block" href="#"><img src="images/cart.png" alt="" width="40%"></a>
+                <a class="py-2 d-none d-md-inline-block" href="add_matelas.php"><img src="images/user.png" alt="" width="50%"></i></a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+    <!-- HeroBanner -->
+    <section class="heroBanner">
+        <h1 class="text-white">Transformer la chambre de vos rêve en realité</h1>
+    </section>
 
-
-
-  
-
-
-
-    <div class="recipes">
+    <!-- <div class="recipes">
     <?php
     foreach ($matelas as $matela) {
     ?>
@@ -48,9 +47,27 @@
         </div>
     <?php
     }
+    ?> -->
+<div class="container">
+    <div class="row">
+    <?php
+    foreach ($matelas as $matela) {
     ?>
-
-
+        <div class="col-md-6 col-xl-6">
+        <h2 class="display-5"><?= $matela["marque"] ?></h2>
+        <div class="container d-flex justify-content-between">
+            <p class="lead"><?= $matela["dimension"] ?></p>
+            <p class="display-6"><?= $matela["prix"] ?>€</p>
+        </div>
+        <figure class="figure">
+        <img class="figure-img img-fluid rounded" src="<?= $matela["images"] ?>" alt="">
+        </figure>
+        </div>
+        <?php
+    }
+    ?>
+    </div>
+</div>
 </body> 
 </html>
             
